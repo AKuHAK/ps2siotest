@@ -14,18 +14,18 @@ EE_LIBS =  -lc -lgcc -ldebug
 
 EE_ASFLAGS = -march=r5900 -EL
 
-EE_CFLAGS = -march=r5900 -ffreestanding -fno-builtin -fshort-double -mno-memcpy -nostartfiles -nodefaultlibs -mlong64 -mhard-float -mno-abicalls -EL
+# EE_CFLAGS = -march=r5900 -ffreestanding -fno-builtin -fshort-double -mno-memcpy -nostartfiles -nodefaultlibs -mlong64 -mhard-float -mno-abicalls -EL
 
-# Strip debug info., but leave some symbols 
-EE_LDFLAGS += $(LDPARAMS) -s 
+# Strip debug info., but leave some symbols
+EE_LDFLAGS += $(LDPARAMS) -s
 
-###################################################################### 
-# 
+######################################################################
+#
 
-all: $(EE_BIN) 
+all: $(EE_BIN)
 
 clean:
-	rm -f $(EE_OBJS) $(EE_BIN) 
+	rm -f $(EE_OBJS) $(EE_BIN)
 
 rebuild: clean all
 
